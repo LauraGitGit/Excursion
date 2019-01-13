@@ -3,13 +3,9 @@ body {
   background-color: black;
   font-family: Verdana;
 }
-img {
-  text-align: center;
-}
 
 p {
   font-size: 7px;
-  text-align: center;
   color: gray;
   font-size: 21px;
 }
