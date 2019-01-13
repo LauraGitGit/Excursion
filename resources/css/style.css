@@ -1,40 +1,37 @@
-
 body {
-    text-align: center;
-    background-color: black;
-    font-family: Verdana;
+  text-align: center;
+  background-color: black;
+  font-family: Verdana;
 }
-img{
-    text-align: center;
+img {
+  text-align: center;
 }
 
 p {
-    font-size: 7px;
-    text-align: center;
-    color:gray;
-    font-size: 21px;
+  font-size: 7px;
+  text-align: center;
+  color: gray;
+  font-size: 21px;
 }
 
 h1 {
-   
-    font-weight: normal;
-    font-size: 50px;
-    color: white;
+  font-weight: normal;
+  font-size: 50px;
+  color: white;
 }
 
 a {
-    color: aquamarine;
-    font-size: 16px;
+  color: aquamarine;
+  font-size: 16px;
 }
 
 h2 {
-    color: white;
-    font-weight: 300;
-    font-size: 42px;
-
+  color: white;
+  font-weight: 300;
+  font-size: 42px;
 }
 
 .bottem-logo {
-    text-align: right;
-    color: gray;
+  text-align: right;
+  color: gray;
 }
