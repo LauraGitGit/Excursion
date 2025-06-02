@@ -2,32 +2,401 @@ body {
   text-align: center;
   background-color: black;
   font-family: Verdana;
+  margin: 0;
+  padding: 0;
+  color: white;
 }
 
-p {
-  font-size: 7px;
-  color: gray;
-  font-size: 21px;
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  color: white;
+}
+
+.nav-brand i {
+  color: aquamarine;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: aquamarine;
+}
+
+.nav-download-btn {
+  padding: 8px 20px;
+  border: 2px solid aquamarine;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-download-btn:hover {
+  background: rgba(127, 255, 212, 0.1);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+              url('https://s3.amazonaws.com/codecademy-content/programs/freelance-one/excursion/images/camp.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.tagline {
+  color: #ccc;
+  font-size: 24px;
+  margin: 20px 0 40px;
+  letter-spacing: 1px;
 }
 
 h1 {
   font-weight: normal;
   font-size: 50px;
   color: white;
-}
-
-a {
-  color: aquamarine;
-  font-size: 16px;
+  margin: 0;
+  max-width: 800px;
+  line-height: 1.2;
 }
 
 h2 {
   color: white;
   font-weight: 300;
   font-size: 42px;
+  margin: 40px 0;
 }
 
-.bottem-logo {
-  text-align: right;
-  color: gray;
+h3 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #ccc;
+  font-size: 21px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Links and Buttons */
+.download-tag {
+  color: aquamarine;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 15px 30px;
+  border: 2px solid aquamarine;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.download-tag:hover {
+  background: rgba(127, 255, 212, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(127, 255, 212, 0.2);
+}
+
+/* Video and Images */
+.feature-video {
+  padding: 60px 20px;
+  text-align: center;
+  background: black;
+}
+
+.phone-frame {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.phone-frame video {
+  width: 100%;
+  display: block;
+}
+
+/* Home Button */
+.phone-frame .home-button {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Coming Soon Section Animation */
+.coming-soon {
+  view-timeline-name: --revealing;
+  view-timeline-axis: block;
+  animation: fade-in linear both;
+  animation-timeline: --revealing;
+  animation-range: entry 20% cover 40%;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: aquamarine;
+  color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.feature-image {
+  margin: 40px auto;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.feature-image img {
+  width: 100%;
+  display: block;
+}
+
+/* Sections */
+section {
+  padding: 100px 20px;
+}
+
+.features {
+  background: linear-gradient(to bottom, #000, #111);
+}
+
+.coming-soon {
+  background: linear-gradient(to bottom, #111, #000);
+}
+
+.icon-container {
+  margin: 30px 0;
+}
+
+.icon-container img {
+  width: 80px;
+  height: auto;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  padding: 60px 20px 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: left;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul a:hover {
+  color: aquamarine;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #ccc;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: aquamarine;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    max-width: 320px;
+    min-height: 568px; /* iPhone 5/SE height */
+  }
+}
+
+/* Slideshow */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.slide {
+  display: none;
+  animation: fade 0.8s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.slide.active .slide-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation Dots */
+.dots-container {
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 10px;
+  position: relative;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 8px;
+  background-color: #666;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: aquamarine;
+  transform: scale(1.2);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

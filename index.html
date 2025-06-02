@@ -1,35 +1,134 @@
 <!DOCTYPE html>
 <html>
-  <style></style>
   <head>
-    <title>Excursion</title>
-    <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+    <title>Excursion - Your Personal Travel Guide</title>
+    <link rel="stylesheet" type="text/css" href="Resources/CSS/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
-    <div>
-    <h1>Discover hidden places in the world around you</h1>
-    <a class="download-tag"
-       href="https://s3.amazonaws.com/codecademy-content/programs/freelance-one/excursion/index.html#">Download Excursion(Coming soon!)
-    </a>
-    </div>
+    <nav class="navbar">
+      <div class="nav-brand">
+        <i class="fas fa-compass"></i>
+        <span>Excursion</span>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#guide">Guide</a>
+        <a href="#download">Download</a>
+        <a href="#" class="nav-download-btn">
+          <i class="fas fa-download"></i>
+          Get the App
+        </a>
+      </div>
+    </nav>
 
-    <video autoplay loop muted 
-      src="https://s3.amazonaws.com/codecademy-content/programs/freelance-one/excursion/videos/excursion.mp4" type="video/mp4">
-      Your browser does not support this video tag!
-    </video>
+    <header class="hero" id="features">
+      <h1>Discover hidden places in the world around you</h1>
+      <p class="tagline">Your next adventure is just a tap away</p>
+      <a class="download-tag" href="#download">
+        <i class="fas fa-download"></i>
+        Download Excursion (Coming soon!)
+      </a>
+    </header>
 
-    <h2>Your personal travel guide</h2>
-    <p>Excursion remembers places you like, and recommends new points of interest around you.</p>
-    <img src="https://s3.amazonaws.com/codecademy-content/programs/freelance-one/excursion/images/camp.jpg" alt="">
+    <section class="feature-video">
+      <div class="phone-frame">
+        <video autoplay loop muted>
+          <source src="https://s3.amazonaws.com/codecademy-content/programs/freelance-one/excursion/videos/excursion.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
 
-    <p class="phone-icon"> 
-    <img src="https://s3.amazonaws.com/codecademy-content/programs/freelance-one/excursion/images/phone.png" alt="">
+    <section class="features" id="guide">
+      <h2>Your personal travel guide</h2>
+      <p class="feature-description">Excursion remembers places you like, and recommends new points of interest around you.</p>
+      
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <img src="https://s3.amazonaws.com/codecademy-content/programs/freelance-one/excursion/images/camp.jpg" alt="Camping under the stars">
+          <div class="slide-caption">Discover camping spots under starlit skies</div>
+        </div>
 
-    <h2>Coming Soon for iphone and Android</h2></p>
+        <div class="slide fade">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Mountain peaks">
+          <div class="slide-caption">Explore majestic mountain ranges</div>
+        </div>
 
-    <a class="download-tag"
-       href="https://s3.amazonaws.com/codecademy-content/programs/freelance-one/excursion/index.html#">Download Excursion(Coming soon!)</a>
+        <div class="slide fade">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Hidden beaches">
+          <div class="slide-caption">Find secluded beaches and coves</div>
+        </div>
+
+        <div class="slide fade">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Forest trails">
+          <div class="slide-caption">Discover hidden forest trails</div>
+        </div>
+
+        <div class="slide fade">
+          <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd" alt="Ancient temples">
+          <div class="slide-caption">Explore ancient temples and ruins</div>
+        </div>
+
+        <div class="slide fade">
+          <img src="https://images.unsplash.com/photo-1502085671122-2d218cd434e6" alt="Northern Lights">
+          <div class="slide-caption">Witness the magic of the Northern Lights</div>
+        </div>
+      </div>
+
+      <!-- Navigation dots -->
+      <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+      </div>
+    </section>
+
+    <section class="coming-soon" id="download">
+      <div class="icon-container">
+        <img src="https://s3.amazonaws.com/codecademy-content/programs/freelance-one/excursion/images/phone.png" alt="Phone icon">
+      </div>
+      <h2>Coming Soon for iPhone and Android</h2>
+      <a class="download-tag" href="#">
+        <i class="fas fa-download"></i>
+        Download Excursion (Coming soon!)
+      </a>
+    </section>
  
-    <p class="bottem-logo">&copy;Excursion</p>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Excursion</h3>
+          <p>Discover hidden places in the world around you with our mobile app.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#guide">Travel Guide</a></li>
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 Excursion. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <a href="#features" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <script src="Resources/js/script.js"></script>
   </body>
 </html>
