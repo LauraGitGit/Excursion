@@ -1,40 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Slideshow functionality
     let slideIndex = 1;
-    const slides = document.getElementsByClassName("slide");
-    const dots = document.getElementsByClassName("dot");
+    showSlides(slideIndex);
 
-    if (slides.length > 0 && dots.length > 0) {
-        function showSlides(n) {
-            if (n > slides.length) slideIndex = 1;
-            if (n < 1) slideIndex = slides.length;
-            
-            // Hide all slides
-            Array.from(slides).forEach(slide => slide.style.display = "none");
-            Array.from(dots).forEach(dot => dot.classList.remove("active"));
-            
-            // Show current slide
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].classList.add("active");
+    function showSlides(n) {
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+        
+        if (n > slides.length) slideIndex = 1;
+        if (n < 1) slideIndex = slides.length;
+        
+        // Hide all slides
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
         
-        // Auto slides
-        function autoAdvance() {
-            slideIndex++;
-            showSlides(slideIndex);
+        // Remove active class from all dots
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
         }
         
-        // Initialize slideshow
-        showSlides(slideIndex);
-        const slideInterval = setInterval(autoAdvance, 5000); // Change slide every 5 seconds
-        
-
-        window.currentSlide = function(n) {
-            // Stop auto-advance when manually changing slides
-            clearInterval(slideInterval); 
-            showSlides(slideIndex = n);
-        };
+        // Show current slide and activate corresponding dot
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
     }
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Dot controls
+    window.currentSlide = function(n) {
+        showSlides(slideIndex = n);
+    }
+
+    // Auto advance slides
+    function autoAdvance() {
+        plusSlides(1);
+    }
+    setInterval(autoAdvance, 5000); // Change slides every 5 seconds
 
     // Download link effect
     const downloadLinks = document.querySelectorAll('.download-tag');
