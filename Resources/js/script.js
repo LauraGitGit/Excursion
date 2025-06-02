@@ -1,38 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Slideshow
+    // Slideshow functionality
     let slideIndex = 1;
     const slides = document.getElementsByClassName("slide");
     const dots = document.getElementsByClassName("dot");
-    
-    function showSlides(n) {
-        if (n > slides.length) slideIndex = 1;
-        if (n < 1) slideIndex = slides.length;
-        
-        // Hide all slides
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            dots[i].classList.remove("active");
+
+    if (slides.length > 0 && dots.length > 0) {
+        function showSlides(n) {
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+            
+            // Hide all slides
+            Array.from(slides).forEach(slide => slide.style.display = "none");
+            Array.from(dots).forEach(dot => dot.classList.remove("active"));
+            
+            // Show current slide
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].classList.add("active");
         }
         
-        // Show current slide
-        slides[slideIndex-1].classList.add("active");
-        dots[slideIndex-1].classList.add("active");
-    }
-    
-    // Auto slides
-    function autoAdvance() {
-        slideIndex++;
+        // Auto slides
+        function autoAdvance() {
+            slideIndex++;
+            showSlides(slideIndex);
+        }
+        
+        // Initialize slideshow
         showSlides(slideIndex);
-    }
-    
-    // Initialize slideshow
-    showSlides(slideIndex);
-    // Change slide every 5 seconds
-    setInterval(autoAdvance, 5000); 
+        const slideInterval = setInterval(autoAdvance, 5000); // Change slide every 5 seconds
+        
 
-    window.currentSlide = function(n) {
-        showSlides(slideIndex = n);
-    };
+        window.currentSlide = function(n) {
+            // Stop auto-advance when manually changing slides
+            clearInterval(slideInterval); 
+            showSlides(slideIndex = n);
+        };
+    }
 
     // Download link effect
     const downloadLinks = document.querySelectorAll('.download-tag');
