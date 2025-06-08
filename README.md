@@ -17,18 +17,7 @@ A beautiful landing page for Excursion - your personal travel guide application 
 - JavaScript (ES6+)
 - Font Awesome for icons
 
-## Preview
 
-Visit the live site [here](#) (Add your GitHub Pages link once deployed)
-
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/excursion.git
-```
-
-2. Open `index.html` in your browser to view the project locally.
 
 ## Development
 
@@ -44,6 +33,4 @@ excursion/
 └── README.md
 ```
 
-## License
 
-This project is open source and available under the [MIT License](LICENSE).
